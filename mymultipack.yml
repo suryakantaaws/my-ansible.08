@@ -2,9 +2,9 @@
 - hosts: all
   become: yes
   tasks:
-  - name: i want to install git, tree and wget by using same tasks
+  - name: i want to install git,tree and wget by using same task
     apt:
-     name: "{{item}}"
+     name: "{{ item }}"
      state: present
     loops:
     - git
