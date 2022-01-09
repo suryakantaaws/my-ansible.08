@@ -3,12 +3,15 @@
   become: yes
   gather_facts: yes
   tasks:
-  - name: install git
+  - name: i want to install web server on only ubuntu node
     apt:
-      name: git
+      name: apache2
       state: present
+    when: ansible_os_family=="Debian" 
+
 
   - name: install webserver
     apt:
       name: apache2
       state: present   
+    when: ansible_os_family=="Debian" 
