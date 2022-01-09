@@ -10,7 +10,7 @@
     when: ansible_os_family=="Debian" 
 
 
-  - name: install webserver
+  - name: i want to install websever on only ubuntu node
     apt:
       name: apache2
       state: present   
