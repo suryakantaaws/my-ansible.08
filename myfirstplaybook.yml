@@ -10,8 +10,20 @@
     when: ansible_os_family=="Debian" 
 
 
-  - name: i want to install websever on only ubuntu node
+  - name: i want to start websever on only ubuntu node
     apt:
       name: apache2
-      state: present   
+      state: started
     when: ansible_os_family=="Debian" 
+  
+  - name: install websever on only RedHat nodes
+    yum:
+      name: httpd
+      state: present
+    when: ansible_os_family=="RedHat"
+
+  - name: i want to start webserver on only RedHat nodes
+    yum:
+      name: apache2
+      state: present
+    when: ansible_os_family=="RedHat"
